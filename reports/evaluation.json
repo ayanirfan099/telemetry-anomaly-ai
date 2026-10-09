@@ -1,0 +1,29 @@
+{
+  "model_id": "63fa082bb7b357c4",
+  "dataset": "Synthetic service telemetry; generated independent train/calibration/test splits",
+  "warning": "Artificial anomalies are easier than many real incidents; results do not establish production performance.",
+  "threshold_policy": "98th percentile of anomaly scores on separate normal calibration data",
+  "threshold": 0.601694562246094,
+  "roc_auc": 0.96092,
+  "average_precision": 0.7370355644088513,
+  "precision": 0.75,
+  "recall": 0.27,
+  "false_positive_rate": 0.018,
+  "confusion_matrix_labels": [
+    0,
+    1
+  ],
+  "confusion_matrix": [
+    [
+      491,
+      9
+    ],
+    [
+      73,
+      27
+    ]
+  ],
+  "train_rows": 1000,
+  "calibration_rows": 300,
+  "test_rows": 600
+}

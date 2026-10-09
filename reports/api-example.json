@@ -1,0 +1,38 @@
+{
+  "request": {
+    "records": [
+      {
+        "cpu_percent": 99,
+        "latency_ms": 900,
+        "error_rate": 0.7,
+        "requests_per_minute": 2000
+      }
+    ]
+  },
+  "response": {
+    "model_id": "63fa082bb7b357c4",
+    "results": [
+      {
+        "is_anomaly": true,
+        "anomaly_score": 0.774003,
+        "threshold": 0.601695,
+        "largest_deviations": [
+          {
+            "feature": "error_rate",
+            "robust_deviation": 89.686
+          },
+          {
+            "feature": "latency_ms",
+            "robust_deviation": 45.575
+          }
+        ]
+      }
+    ],
+    "population_stability_index": null,
+    "notes": [
+      "Scores are anomaly rankings, not probabilities.",
+      "Largest deviations are descriptive, not causal model explanations.",
+      "PSI is computed only for batches of at least 20; small batches are noisy."
+    ]
+  }
+}
