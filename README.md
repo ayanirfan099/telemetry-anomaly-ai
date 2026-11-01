@@ -4,6 +4,13 @@ Detect unusual service telemetry using **Isolation Forest**, a threshold calibra
 
 The project demonstrates unsupervised scoring, leakage checks, threshold tradeoffs, JSON APIs and descriptive explanations. An alert is a candidate for investigation, not a diagnosis of an outage.
 
+[![CI](https://github.com/ayanirfan099/telemetry-anomaly-ai/actions/workflows/tests.yml/badge.svg)](https://github.com/ayanirfan099/telemetry-anomaly-ai/actions/workflows/tests.yml)
+
+
+![Synthetic telemetry score distributions, fixed-policy precision and recall, and batch PSI](reports/diagnostics.png)
+
+The fixed 98th-percentile calibration policy has 75% precision and 27% recall on the bundled synthetic test data. The graphic shows that operating point without optimizing on test labels. PSI is descriptive. Reproduce with `python -m pip install matplotlib`, then `python scripts/plot_diagnostics.py`.
+
 ## Features and flow
 
 Input features are `cpu_percent` (0–100), `latency_ms` (non-negative), `error_rate` (fraction 0–1) and `requests_per_minute` (non-negative).
@@ -83,4 +90,4 @@ python app.py evaluate
 
 The dependencies are pinned to the versions tested for this project, not advertised as the newest versions. After the first dependency installation, the bundled examples run offline. No paid API keys or external model downloads are needed.
 
-The lightweight HTTP server is for local demonstrations. It binds to localhost, accepts JSON only, limits request size and does not log request bodies. Authentication, production serving, rate limiting and operational monitoring must be added before public deployment. The included GitHub Actions workflow runs tests and evaluation when pushed to a repository; that remote workflow has not run yet.
+The lightweight HTTP server is for local demonstrations. It binds to localhost, accepts JSON only, limits request size and does not log request bodies. Authentication, production serving, rate limiting and operational monitoring must be added before public deployment. The included GitHub Actions workflow runs tests and evaluation when pushed to a repository; check the linked Actions badge for current remote status.
