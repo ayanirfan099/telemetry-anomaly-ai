@@ -1,4 +1,4 @@
-# Telemetry Anomaly AI
+# Telemetry Anomaly Detection & Drift Reports
 
 Detect unusual service telemetry using **Isolation Forest**, a threshold calibrated on separate normal data, and **population stability index (PSI)** reports for incoming batches.
 
